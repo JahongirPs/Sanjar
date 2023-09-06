@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react';
+// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './ProductCarousel.scss';
 import { Navigation, Autoplay } from 'swiper/modules';
 import ProductCard from '../product-card/ProductCard';
-
+import { Link } from 'react-router-dom';
 
 const ProductCarousel = ({categoryData}) => {
   return (
@@ -31,18 +32,18 @@ const ProductCarousel = ({categoryData}) => {
       }}
         slidesPerView={8}
         spaceBetween={10}
-        autoplay={{delay: 5000}}
+        autoplay={{delay: 1000}}
         loop={true}
         draggable={true}
         slidesPerGroup={1}
         navigation={true}
         modules={[Autoplay, Navigation]}
-        className="myaSwiper"
+        className="mySwiper"
       >
         {
-          categoryData.allRefinedProducts.map(product => 
+          categoryData.allRefinedProducts.map(product =>
             <SwiperSlide key={product._id}>
-             <ProductCard productData={product} />
+                <ProductCard productData={product} />
             </SwiperSlide>
           )
         }

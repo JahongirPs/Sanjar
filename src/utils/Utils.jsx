@@ -10,4 +10,13 @@ const DefaultButton = ({text}) => {
   )
 }
 
-export { DefaultButton }
+const  Container  = ({children}) => {
+return (
+  <div className="container">
+    {children}
+  </div>
+)
+}
+
+
+export { DefaultButton, Container }

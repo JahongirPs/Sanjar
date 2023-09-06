@@ -1,27 +1,53 @@
 import React from 'react'
-import "./Contact.scss"
+import './Contact.scss'
+import {FiFacebook, FiMapPin, FiPhoneCall, FiSend, FiYoutube} from "react-icons/fi";
+import {Link} from "react-router-dom";
+import email from "../../images/email.svg";
+
 
 const Contact = () => {
   return (
-    <div className='Contact'>
-        <div className="Text_contact">
-            <h1>Биз xақимизда</h1>
-            <p>Ассалому алайкум !</p>
-            <p>Сизларга шуни маълум киламизки Наманганда махсус қолип (пресс-форма) ларни ясашда ва ишлатишда фойдаланиладиган асбоб-ускуна(инструмент)лар дукони очилди!</p>
-            <p>Биз сизга буюртма асосида хам сизга керакли булган нарсаларни тез ва арзон нархларда етказиб берамиз.</p>
-            <img className='img_contact' src="https://mold-components-14sxqbw1r-ijalalov69-gmailcom.vercel.app/static/media/office-min%202.153cd0976584138310b4.jpg" alt="" />
-            <p>Асосий махсулоларимиз тури куйидагилар:</p>
-            <ul>
-               <li>Металга ишлов берувчи асбоблар (Оправкалар, фрезалар ва хоказолар)</li>
-               <li>Пластмасса қолиплари с штампом для бутловчи кисмлар (Летниклар, толкателлар, пружиналар)</li>
-               <li>Улчов асбоблари (Штангенциркуль, микрометр)</li>
-               <li>Метални сайқаллаш учун ишлатиладиган асбоблар (Керамик тошлар, олмос тошлар, тош коғозлар).</li>
-               <li>Қолип (пресс-форма) учун керак буладиган мойлар (Разблокировка пресс-форм, Очистка пресс-форм, Антикоррозийная обработка).</li>
-               <li>Эрозия йули билана металга ишлов берувчи ускуналар (WIRE EDM, SPARK EDM, SUPER DRILL).</li>
-               <li>Металла ЧПУ бошкаруви оркали ишлов берувчи ускуналар (VMC CNC)</li>
-               <li>Пластмасса махсулотлари қуйиш учун ускуналар (Термопластавтоматлар ва қолиплар).</li>
-            </ul>
+    <div className={'contact__container'}>
+    <h1>Биз билан богланиш</h1>
+      <ul className="contact__list">
+        <li>
+          <FiPhoneCall className="contact__icons" />
+          <Link  className="contact__link" href="tel:+89992475515">+998 91 176 00 85
+          </Link>
+        </li>
+        <li style={{display:"flex", gap:"20px"}}>
+          <Link className="contact__link" to="mailto:erkinjon.hodjaev@gmail.com" target="_blank">
+            <img src={email}/>
+          </Link>
+          erkinjon.hodjaev@gmail.com
+        </li>
+        <li>
+          <FiMapPin  className="contact__icons"/>
+          Наманган вилояти , Давлатобод тумани , Дустлик Шох кучаси 109-уй
+        </li>
+      </ul>
+      <div className={'contact_footer'}>
+        <b>Бизни кузатиб боринг</b>
+        <div className="footer_follow_wrapper">
+          <Link to="" className="contact_follow-links">
+            <FiSend className="contact__follow-icons"/>
+          </Link>
+          <Link to="" className="contact_follow-links">
+            <FiFacebook className="contact__follow-icons"/>
+          </Link>
+          <Link to="" className="contact_follow-links">
+            <FiYoutube className="contact__follow-icons"/>
+          </Link>
         </div>
+      </div>
+      <iframe
+        style={{marginTop:"30px"}}
+        className="map"
+        src="https://yandex.uz/map-widget/v1/?ll=71.612607%2C41.004148&z=14&l=map&pt=71.612607%2C41.004148~109 Dustlik Shokh street, Davlatabad district, Namangan region&size=large"
+        width="560"
+        height="400"
+        frameBorder="0">
+      </iframe>
     </div>
   )
 }
